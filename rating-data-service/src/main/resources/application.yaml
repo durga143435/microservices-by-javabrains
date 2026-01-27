@@ -1,3 +1,11 @@
 spring:
   application:
     name: rating-data-service
+
+server:
+  port: 8083
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9999/eureka, http://localhost:9998/eureka, http://localhost:9997/eureka,
