@@ -13,6 +13,7 @@ public class MovieServiceController {
 
     @RequestMapping("/{movieId}")
     public ResponseEntity<Movie> getMovie(@PathVariable("movieId") String movieId){
+
         return ResponseEntity.ok(new Movie(movieId, "Test name"+movieId));
     }
 }

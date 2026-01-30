@@ -22,6 +22,12 @@ public class RatingDataController {
 
     @GetMapping("/users/{userId}")
     public ResponseEntity<UserRatings> getUserRatings(@PathVariable("userId") String userId){
+        System.out.println("simulating delay===================================================================");
+        try {
+            Thread.sleep(20000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         List<Rating> ratings = List.of(
                 new Rating("123", 10),
                 new Rating("345", 9)
