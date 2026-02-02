@@ -4,18 +4,27 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.Map;
+
 @RestController
 public class ConfigController {
 
-    @Value("${my.greetings}")
+    @Value("${my.greetings: app.desc}")
     private String greetingMsg;
+
+    @Value("${my.list.values}")
+    private List<String> values;
+
+    @Value("#{${ }}")
+    private Map<String, String> keyValues;
 
     @Value("${app.description}")
     private String appDesc;
 
     @GetMapping("/greeting")
     public String getGreeting() {
-        return greetingMsg;
+        return greetingMsg + values + keyValues;
     }
 
     @GetMapping("/appDesc")
