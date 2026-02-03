@@ -1,0 +1,4 @@
+db:
+  connection: "{url:'htpp://test.com_____', username:'myname-test', password:'pass123-test'}"
+  port: 1234
+  host: 0.123.05
