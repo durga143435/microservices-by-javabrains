@@ -1,8 +1,8 @@
 spring:
   application:
     name: spring-boot-config
-  profiles:
-    active: test
+  config:
+    import: configserver:http://localhost:8888
 
 app:
   description: welcome to ${spring.application.name}
@@ -22,4 +22,7 @@ management:
   endpoints:
     web:
       exposure.include: "*"
+
+custom:
+  value: this is custom value from the jar application.yml file
 
